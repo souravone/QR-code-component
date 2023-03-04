@@ -3,7 +3,7 @@
   --colour-light-gray: hsl(212, 45%, 89%);
   --colour-grayish-blue: hsl(220, 15%, 55%);
   --colour-dark-blue: hsl(218, 44%, 22%);
-  --font-size-main: 1.5rem;
+  --font-size-main: cR(15px);
 }
 
 * {
@@ -19,12 +19,6 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
-}
-@media only screen and (max-width: 23.44em) {
-  html {
-    font-size: 56.25%;
-  }
 }
 
 body {
@@ -33,45 +27,70 @@ body {
   line-height: 1.3;
   background-color: var(--colour-light-gray);
 }
+@media only screen and (max-width: 23.44em) {
+  body {
+    line-height: 1.1;
+  }
+}
 
 .main {
-  max-width: 144rem;
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 95vh;
 }
 
 .qrcode {
-  max-width: 30rem;
-  padding: 2rem;
+  max-width: 18.75rem;
+  padding: 1.25rem;
   background-color: var(--colour-white);
-  border-radius: 1rem;
+  border-radius: 0.625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
 }
+@media only screen and (max-width: 23.44em) {
+  .qrcode {
+    max-width: 15.625rem;
+    padding: 0.75rem;
+  }
+}
 .qrcode__image {
   width: 100%;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
+  border-radius: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+@media only screen and (max-width: 23.44em) {
+  .qrcode__image {
+    margin-bottom: 0.9375rem;
+  }
 }
 .qrcode__heading {
   color: var(--colour-dark-blue);
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.9375rem;
+}
+@media only screen and (max-width: 23.44em) {
+  .qrcode__heading {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
 }
 .qrcode__description {
   font-size: var(--font-size-main);
   color: var(--colour-grayish-blue);
 }
 
-.attribution {
+.footer {
   font-size: 11px;
   text-align: center;
 }
 
-.attribution a {
+.footer a {
   color: hsl(228, 45%, 44%);
 }
 

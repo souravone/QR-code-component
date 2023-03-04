@@ -37,13 +37,15 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### What I learned
 
-How to use flexbox with
+How to use flexbox with flex-direction.
 
 ```css
 .qrcode {
   flex-direction: column;
 }
 ```
+
+Improved by the feedback of @MelvinAguilar [Melvin Aguilar](https://www.frontendmentor.io/profile/MelvinAguilar)
 
 ### Useful resources
 

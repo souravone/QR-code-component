@@ -4,10 +4,16 @@
   --colour-grayish-blue: hsl(220, 15%, 55%);
   --colour-dark-blue: hsl(218, 44%, 22%);
 
-  --font-size-main: 1.5rem;
+  --font-size-main: cR(15px);
 }
 
 $bp-small: 23.44em; // 375px
+
+@function cR($size) {
+  // $remSize: $size / 16px;
+  $remSize: calc($size/ 16px);
+  @return #{$remSize}rem;
+}
 
 * {
   margin: 0;
@@ -22,11 +28,6 @@ $bp-small: 23.44em; // 375px
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; // 1rem = 10px
-
-  @media only screen and (max-width: $bp-small) {
-    font-size: 56.25%; //1rem = 8px
-  }
 }
 
 body {
@@ -34,34 +35,54 @@ body {
   font-weight: 400;
   line-height: 1.3;
   background-color: var(--colour-light-gray);
+
+  @media only screen and (max-width: $bp-small) {
+    line-height: 1.1;
+  }
 }
 
 .main {
-  max-width: 144rem;
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 95vh;
 }
 
 .qrcode {
-  max-width: 30rem;
-  padding: 2rem;
+  max-width: cR(300px);
+  padding: cR(20px);
   background-color: var(--colour-white);
-  border-radius: 1rem;
+  border-radius: cR(10px);
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
 
+  @media only screen and (max-width: $bp-small) {
+    max-width: cR(250px);
+    padding: cR(12px);
+  }
+
   &__image {
     width: 100%;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
+    border-radius: cR(10px);
+    margin-bottom: cR(20px);
+    @media only screen and (max-width: $bp-small) {
+      margin-bottom: cR(15px);
+    }
   }
   &__heading {
     color: var(--colour-dark-blue);
-    margin-bottom: 1.5rem;
+    font-size: cR(20px);
+    margin-bottom: cR(15px);
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: cR(18px);
+      margin-bottom: cR(12px);
+    }
   }
   &__description {
     font-size: var(--font-size-main);
@@ -69,10 +90,10 @@ body {
   }
 }
 
-.attribution {
+.footer {
   font-size: 11px;
   text-align: center;
 }
-.attribution a {
+.footer a {
   color: hsl(228, 45%, 44%);
 }
